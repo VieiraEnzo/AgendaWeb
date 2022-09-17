@@ -1,21 +1,32 @@
 agenda = {}
 
+def save_agenda():
+    pass
+
+
+def input_agenda():
+    pass
+
 
 def adicionar_contato():
     nome = input("Qual o  nome do contato: ")
     email = input("Qual o email do contato: ")
     telefone = input("Qual o telefone do contato: ")
     agenda[nome] = [email,telefone]
-    print(agenda)
-    pass
+    print(f'contato "{nome}" adicionado com sucesso')
+
 
 def deletar_contato():
     nome = input('Quem vai rodar? ')
-    del agenda(nome)
-    pass
+    del agenda[nome]
+    print(f'contato "{nome}" deletado com sucesso')
 
 def buscar_contato():
+    nome = input("Quem quieres buscar? ")
+    print(agenda.get(nome, 'Contato não encontrado'))
     pass
+
+input_agenda()
 
 while (True):
 
@@ -30,6 +41,7 @@ while (True):
         deletar_contato()
     
     elif(resposta == 's'):
+        save_agenda()
         break
 
     else:
