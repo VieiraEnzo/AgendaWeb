@@ -1,11 +1,19 @@
 agenda = {}
 
+
 def save_agenda():
-    pass
+    with open('agenda.csv', 'w') as arquivo:
+        for i in agenda:
+            arquivo.write(f"{i}, {agenda[i][0]}, {agenda[i][1]}\n")
+
 
 
 def input_agenda():
-    pass
+    with open('agenda.csv', 'r' ) as f:
+        for linha in f:
+            lista = linha.split(', ')
+            agenda[lista[0]] = [lista[1], lista[2][:-1]]
+
 
 
 def adicionar_contato():
