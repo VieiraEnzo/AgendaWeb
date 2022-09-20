@@ -11,6 +11,7 @@ def inserirfunc():
     nome = request.form["nome"]
     email = request.form["email"]
     telefone = request.form["telefone"]
+    print(nome)
     return render_template("inserir.html")
 
 
