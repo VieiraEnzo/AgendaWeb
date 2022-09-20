@@ -1,5 +1,4 @@
-from flask import Flask, render_template
-
+from flask import Flask, render_template, request
 app = Flask(__name__)
 
 @app.route("/")
@@ -9,6 +8,9 @@ def hello_world():
 
 @app.route("/inserir")
 def inserirfunc():
+    nome = request.form["nome"]
+    email = request.form["email"]
+    telefone = request.form["telefone"]
     return render_template("inserir.html")
 
 
